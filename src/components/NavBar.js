@@ -29,7 +29,7 @@ export default class NavBar extends Component {
                   width="248"
                   height="35"
                   stroke="#222222"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
                 <g filter="url(#filter0_d)">
                   <path
@@ -49,9 +49,9 @@ export default class NavBar extends Component {
                     width="227.336"
                     height="26.084"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
