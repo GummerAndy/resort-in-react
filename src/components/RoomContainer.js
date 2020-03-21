@@ -6,10 +6,20 @@ import Loading from "./Loading";
 
 export default function RoomContainer() {
   return (
-    <div>
-      Hello from RoomContainer
-      <RoomFilter />
-      <RoomList />
-    </div>
+    <RoomConsumer>
+      {value => {
+        const { loading, sortedRooms, rooms } = value;
+        if (loading) {
+          return <Loading />;
+        }
+        return (
+          <div>
+            Hello from RoomContainer
+            <RoomFilter />
+            <RoomList />
+          </div>
+        );
+      }}
+    </RoomConsumer>
   );
 }
