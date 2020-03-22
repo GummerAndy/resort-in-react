@@ -21,6 +21,7 @@ export default function RoomFilter({ rooms }) {
     breakfast,
     pets
   } = context;
+
   // Get unique types
   let types = getUnique(rooms, "type");
   // add all
@@ -29,6 +30,15 @@ export default function RoomFilter({ rooms }) {
   types = types.map((item, index) => {
     return (
       <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
+  let people = getUnique(rooms, "capacity");
+  people = people.map((item, index) => {
+    return (
+      <option key={index} value={item}>
         {item}
       </option>
     );
@@ -51,6 +61,21 @@ export default function RoomFilter({ rooms }) {
             {types}
           </select>
         </div>
+        {/* End select type */}
+        {/* Select guests */}
+        <div className="form-group">
+          <label htmlFor="capacity">room type</label>
+          <select
+            name="capacity"
+            id="capacity"
+            className="form-control"
+            value={capacity}
+            onChange={handleChange}
+          >
+            {people}
+          </select>
+        </div>
+        {/* End select guest */}
       </form>
     </section>
   );
