@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import items from "./data";
+import Client from "./contentful";
 
+// If data come from contentful use this:
+// Client.getEntries({ content_type: "beachResortRoom" }).then(response =>
+//   console.log(response)
+// );
 const RoomContext = React.createContext();
 
 class RoomProvider extends Component {
@@ -11,7 +16,7 @@ class RoomProvider extends Component {
     loading: false,
     type: "all",
     capacity: 1,
-    price: 0,
+    price: 600,
     minPrice: 0,
     maxPrice: 0,
     minSize: 0,
